@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div>
+            {% for car in cars %}
+                {% include 'index/_card.html.twig' with {car: car} only %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

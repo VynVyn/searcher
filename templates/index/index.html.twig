@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+    {{ form_end(form) }}
+
+    <div class="container">
+        <div>
+            {% for car in cars %}
+                {% include 'index/_card.html.twig' with {car: car} only %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        {{ knp_pagination_render(cars) }}    
+    </div>
+
+
+{% endblock %}
